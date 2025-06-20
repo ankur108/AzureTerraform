@@ -1,0 +1,1 @@
+//Vnet config for variables.tf

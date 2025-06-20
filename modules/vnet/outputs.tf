@@ -1,0 +1,1 @@
+//Vnet config for outputs.tf
