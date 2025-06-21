@@ -1,0 +1,1 @@
+//VM config for Variables.tf

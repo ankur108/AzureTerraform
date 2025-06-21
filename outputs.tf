@@ -8,3 +8,8 @@ output "resource_group_name" {
   value       = azurerm_resource_group.arg.name
   description = "The name of the resource group."
 }
+output "subnet_id" {
+  value       = module.vnet.subnet_id
+  description = "The ID of the internal subnet."
+
+}

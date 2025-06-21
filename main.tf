@@ -11,3 +11,9 @@ module "database" {
   resource_location   = azurerm_resource_group.arg.location
   database_name       = var.database_name
 }
+
+module "vnet" {
+  source              = "./modules/vnet"
+  resource_group_name = azurerm_resource_group.arg.name
+  resource_location   = azurerm_resource_group.arg.location
+}
