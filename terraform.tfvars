@@ -1,7 +1,7 @@
 # SQL Server
 
-mssql_server_name = "sqlexampleankur"
-database_name     = "exampledb"
+mssql_server_name = "sqlserver-terraform"
+database_name     = "sqldatabaseTerraform"
 
-resource_group_name = "my_terraform_rg"
+resource_group_name = "terraform_rg"
 resource_location   = "UK South"
