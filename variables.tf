@@ -42,3 +42,12 @@ variable "key_vault_name" {
   type        = string
   description = "The name of the Key Vault to be created."
 }
+variable "sql_admin_username" {
+  type        = string
+  description = "The SQL administrator username for the SQL Server."
+}
+variable "sql_admin_password" {
+  type        = string
+  description = "The SQL administrator password for the SQL Server."
+  sensitive   = true
+}

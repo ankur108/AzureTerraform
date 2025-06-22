@@ -12,5 +12,5 @@ output "database_name" {
 }
 output "cosmosdb_account_name" {
     value = azurerm_cosmosdb_account.db.name
-    
+    description = "value of the CosmosDB account name"
 }

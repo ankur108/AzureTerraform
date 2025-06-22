@@ -1,6 +1,18 @@
+data "azurerm_key_vault" "keyv" {
+  name                = var.key_vault_id
+  resource_group_name = var.resource_group_name
+}
+data "azurerm_key_vault_secret" "sql_admin_username" {
+  name         = "sql-administrator-username"
+  key_vault_id = data.azurerm_key_vault.keyv.id
+}
+data "azurerm_key_vault_secret" "sql_admin_password" {
+  name         = "sql-administrator-password"
+  key_vault_id = data.azurerm_key_vault.keyv.id
+}
 resource "azurerm_storage_account" "db" {
   name                     = var.storage_account_name
-  resource_group_name      = var. resource_group_name
+  resource_group_name      = var.resource_group_name
   location                 = var.resource_location
   account_tier             = "Standard"
   account_replication_type = "GRS"

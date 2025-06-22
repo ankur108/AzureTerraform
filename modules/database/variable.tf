@@ -22,3 +22,8 @@ variable "resource_location" {
   type        = string
   description = "The Azure region where the SQL Server will be located."
 }
+variable "key_vault_id" {
+  type        = string
+  description = "The ID of the Key Vault where secrets will be stored."
+  
+}

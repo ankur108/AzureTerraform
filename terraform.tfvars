@@ -13,14 +13,14 @@ data_factory_name = "data-factory-terraform"
 
 
 #databse variables
-mssql_server_name = "sql-server-terraform"
-database_name     = "sql-database-terraform"
-storage_account_name = "storageankuracctrt"
+mssql_server_name     = "sql-server-terraform"
+database_name         = "sql-database-terraform"
+storage_account_name  = "storageankuracctrt"
 cosmosdb_account_name = "cosmosdbterraform"
 
 #Key vault variables
-key_vault_name = "db-details"
+key_vault_name = "db-keys"
 
 #vnet variables
 network_security_group_name = "nsg-terraform"
-virtual_network_name         = "vnet-terraform"
+virtual_network_name        = "vnet-terraform"
