@@ -1,3 +1,7 @@
+variable "storage_account_name" {
+  type        = string
+  description = "The name of the Azure Storage Account to be created."
+}
 variable "server_name" {
   type        = string
   description = "The name of the SQL Server instance."
@@ -5,6 +9,10 @@ variable "server_name" {
 variable "database_name" {
   type        = string
   description = "The name of the SQL Database to be created."
+}
+variable "cosmosdb_account_name" {
+  type        = string
+  description = "The name of the Cosmos DB account to be created."
 }
 variable "resource_group_name" {
   type        = string
