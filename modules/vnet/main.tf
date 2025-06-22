@@ -1,11 +1,8 @@
-//Vnet config for Main.tf
-
 resource "azurerm_network_security_group" "main" {
   name                = var.network_security_group_name
   location            = var.resource_location
   resource_group_name = var.resource_group_name
 }
-
 
 resource "azurerm_virtual_network" "main" {
   name                = var.virtual_network_name

@@ -21,6 +21,14 @@ module "database" {
   cosmosdb_account_name = var.cosmosdb_account_name
 }
 
+module "key_vault" {
+  source              = "./modules/key_vault"
+  resource_group_name = azurerm_resource_group.arg.name
+  resource_location   = azurerm_resource_group.arg.location
+  key_vault_name      = var.key_vault_name
+}
+
+
 module "vnet" {
   source              = "./modules/vnet"
   resource_group_name = azurerm_resource_group.arg.name

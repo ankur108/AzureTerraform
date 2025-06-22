@@ -38,3 +38,7 @@ variable "virtual_network_name" {
   type        = string
   description = "The name of the virtual network."   
 }
+variable "key_vault_name" {
+  type        = string
+  description = "The name of the Key Vault to be created."
+}

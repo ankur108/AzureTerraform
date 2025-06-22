@@ -19,6 +19,7 @@ storage_account_name = "storageankuracctrt"
 cosmosdb_account_name = "cosmosdbterraform"
 
 #Key vault variables
+key_vault_name = "db-details"
 
 #vnet variables
 network_security_group_name = "nsg-terraform"
