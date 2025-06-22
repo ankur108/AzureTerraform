@@ -6,7 +6,3 @@ variable "resource_location" {
   type        = string
   description = "The Azure region where the Key Vault will be located."
 }
-variable "key_vault_name" {
-  type        = string
-  description = "The name of the Key Vault to be created."
-}
