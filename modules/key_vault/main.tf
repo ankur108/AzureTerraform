@@ -24,6 +24,6 @@ resource "azurerm_key_vault_secret" "username" {
 
 resource "azurerm_key_vault_secret" "passord" {
   name         = "sql-administrator-password"
-  value        = var.administrator_username
+  value        = var.administrator_password
   key_vault_id = azurerm_key_vault.keyv.id
 }
