@@ -1,7 +1,19 @@
 data "azurerm_client_config" "current" {}
+
 resource "azurerm_resource_group" "arg" {
   name     = var.resource_group_name
   location = var.resource_location
+}
+
+module "key_vault" {
+  source                 = "./modules/key_vault"
+  resource_group_name    = azurerm_resource_group.arg.name
+  resource_location      = azurerm_resource_group.arg.location
+  key_vault_name         = var.key_vault_name
+  tenant_id              = data.azurerm_client_config.current.tenant_id
+  object_id              = data.azurerm_client_config.current.object_id
+  administrator_username = var.sql_admin_username
+  administrator_password = var.sql_admin_password
 }
 
 module "compute" {
@@ -22,18 +34,6 @@ module "database" {
   cosmosdb_account_name = var.cosmosdb_account_name
   key_vault_id          = module.key_vault.key_vault_id
 }
-
-module "key_vault" {
-  source                  = "./modules/key_vault"
-  resource_group_name     = azurerm_resource_group.arg.name
-  resource_location       = azurerm_resource_group.arg.location
-  key_vault_name          = var.key_vault_name
-  tenant_id               = data.azurerm_client_config.current.tenant_id
-  object_id               = data.azurerm_client_config.current.object_id
-  administrator_userrname = var.sql_admin_username
-  administrator_password  = var.sql_admin_password
-}
-
 
 module "vnet" {
   source                      = "./modules/vnet"

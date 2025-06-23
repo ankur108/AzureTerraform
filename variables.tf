@@ -24,7 +24,7 @@ variable "database_name" {
 }
 variable "storage_account_name" {
   type        = string
-  description = "Name of the Azure Storage Account to be created" 
+  description = "Name of the Azure Storage Account to be created"
 }
 variable "cosmosdb_account_name" {
   type        = string
@@ -32,22 +32,24 @@ variable "cosmosdb_account_name" {
 }
 variable "network_security_group_name" {
   type        = string
-  description = "The name of the network security group."   
+  description = "The name of the network security group."
 }
 variable "virtual_network_name" {
   type        = string
-  description = "The name of the virtual network."   
+  description = "The name of the virtual network."
 }
 variable "key_vault_name" {
   type        = string
   description = "The name of the Key Vault to be created."
 }
 variable "sql_admin_username" {
+  description = "SQL administrator username"
   type        = string
-  description = "The SQL administrator username for the SQL Server."
 }
+
 variable "sql_admin_password" {
+  description = "SQL administrator password"
   type        = string
-  description = "The SQL administrator password for the SQL Server."
   sensitive   = true
 }
+

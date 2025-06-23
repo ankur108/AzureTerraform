@@ -12,18 +12,18 @@ resource "azurerm_key_vault" "keyv" {
   access_policy {
     tenant_id = var.tenant_id
     object_id = var.object_id
-    secret_permissions = [ "get", "set", "list" ]
+    secret_permissions = [ "Get", "Set", "List" ]
   }
 }
 
 resource "azurerm_key_vault_secret" "username" {
   name         = "sql-administrator-username"
-  value        = var.administrator_userrname
+  value        = var.administrator_username
   key_vault_id = azurerm_key_vault.keyv.id
 }
 
 resource "azurerm_key_vault_secret" "passord" {
   name         = "sql-administrator-password"
-  value        = var.administrator_password
+  value        = var.administrator_username
   key_vault_id = azurerm_key_vault.keyv.id
 }

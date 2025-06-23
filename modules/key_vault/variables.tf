@@ -6,13 +6,15 @@ variable "resource_location" {
   type        = string
   description = "The Azure region where the Key Vault will be located."
 }
-variable "administrator_userrname" {
+variable "administrator_username" {
   type        = string
-  description = "The username for the SQL administrator."
+  description = "SQL administrator username"
 }
+
 variable "administrator_password" {
   type        = string
-  description = "The password for the SQL administrator."
+  description = "SQL administrator password"
+  sensitive   = true
 }
 variable "tenant_id" {
   type        = string
