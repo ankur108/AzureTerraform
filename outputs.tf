@@ -10,10 +10,6 @@ output "data_factory_name" {
   value       = module.compute.data_factory_name
   description = "The name of the Azure Data Factory instance."
 }
-output "storage_account_name" {
-  value       = module.database.storage_account_name
-  description = "The name of the Azure Storage Account."
-}
 output "mssql_server_name" {
   value       = module.database.server_name
   description = "The name of the MSSQL server."

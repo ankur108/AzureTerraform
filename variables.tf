@@ -22,14 +22,7 @@ variable "database_name" {
   type        = string
   description = "Name of the database to be created on the MSSQL server"
 }
-variable "storage_account_name" {
-  type        = string
-  description = "Name of the Azure Storage Account to be created"
-}
-variable "cosmosdb_account_name" {
-  type        = string
-  description = "Name of the CosmosDB account to be created"
-}
+
 variable "network_security_group_name" {
   type        = string
   description = "The name of the network security group."
@@ -52,4 +45,12 @@ variable "sql_admin_password" {
   type        = string
   sensitive   = true
 }
+variable "storage_account_name" {
+  type        = string
+  description = "The name of the Azure Storage Account to be created."
+}
 
+variable "cosmosdb_account_name" {
+  type        = string
+  description = "Name of the CosmosDB account to be created"
+}

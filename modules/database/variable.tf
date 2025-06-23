@@ -1,7 +1,3 @@
-variable "storage_account_name" {
-  type        = string
-  description = "The name of the Azure Storage Account to be created."
-}
 variable "server_name" {
   type        = string
   description = "The name of the SQL Server instance."
@@ -22,8 +18,18 @@ variable "resource_location" {
   type        = string
   description = "The Azure region where the SQL Server will be located."
 }
-variable "key_vault_id" {
+variable "key_vault_name" {
   type        = string
-  description = "The ID of the Key Vault where secrets will be stored."
+  description = "The name of the Key Vault where secrets will be stored."
   
+}
+variable "sql_admin_username" {
+  description = "SQL administrator username"
+  type        = string
+}
+
+variable "sql_admin_password" {
+  description = "SQL administrator password"
+  type        = string
+  sensitive   = true
 }

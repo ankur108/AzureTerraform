@@ -1,5 +1,11 @@
+resource "random_string" "suffix" {
+  length  = 6
+  upper   = false
+  special = false
+}
+
 resource "azurerm_key_vault" "keyv" {
-  name                        = "examplekeyvault"
+  name                        = "keyvault-${random_string.suffix.result}"
   location                    = var.resource_location
   resource_group_name         = var.resource_group_name
   enabled_for_disk_encryption = true
@@ -12,7 +18,7 @@ resource "azurerm_key_vault" "keyv" {
   access_policy {
     tenant_id = var.tenant_id
     object_id = var.object_id
-    secret_permissions = [ "Get", "Set", "List" ]
+    secret_permissions = [ "Get", "Set", "List", "Delete", "Purge", "Recover" ]
   }
 }
 
@@ -22,7 +28,7 @@ resource "azurerm_key_vault_secret" "username" {
   key_vault_id = azurerm_key_vault.keyv.id
 }
 
-resource "azurerm_key_vault_secret" "passord" {
+resource "azurerm_key_vault_secret" "password" {
   name         = "sql-administrator-password"
   value        = var.administrator_password
   key_vault_id = azurerm_key_vault.keyv.id
